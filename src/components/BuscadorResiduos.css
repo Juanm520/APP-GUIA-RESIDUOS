@@ -1,0 +1,301 @@
+/* BuscadorResiduos.css - Estilos principales de la aplicación */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.buscador-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buscador-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 20px;
+}
+
+.buscador-header h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.buscador-form {
+  margin-bottom: 30px;
+}
+
+.buscador-input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1em;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.buscador-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Filtros por categoría */
+.filtros-categoria {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-filtro {
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+}
+
+.btn-filtro:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.btn-filtro.activo {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.btn-filtro.blanca.activo {
+  background: #f5f5f5;
+  color: #333;
+  border-color: #999;
+}
+
+.btn-filtro.negra.activo {
+  background: #1a1a1a;
+  color: white;
+  border-color: #444;
+}
+
+.btn-filtro.verde.activo {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.btn-filtro.roja.activo {
+  background: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+/* Lista de residuos */
+.residuos-lista {
+  margin-bottom: 30px;
+}
+
+.residuos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.residuo-item {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.residuo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.residuo-header {
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.residuo-header strong {
+  font-size: 1.1em;
+}
+
+.residuo-header small {
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+/* Overlay para legibilidad en tarjetas blancas */
+.residuo-item:has(.residuo-header[style*="#f5f5f5"])::before,
+.residuo-item:has(.residuo-header[style*="#FFFFFF"])::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  border-radius: 10px 10px 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.residuo-header {
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+}
+
+.residuo-header strong {
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.residuo-header small {
+  opacity: 0.95;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.residuo-ejemplos {
+  padding: 12px 15px;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.4;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sin-resultados {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.sin-resultados p {
+  font-size: 1.1em;
+}
+
+.btn-volver {
+  display: block;
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-volver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buscador-container {
+    padding: 20px;
+  }
+
+  .buscador-header h1 {
+    font-size: 1.8em;
+  }
+
+  .filtros-categoria {
+    gap: 8px;
+  }
+
+  .btn-filtro {
+    padding: 10px 15px;
+    font-size: 0.85em;
+  }
+
+  .residuos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .buscador-container {
+    padding: 15px;
+  }
+
+  .buscador-header h1 {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+  }
+
+  .filtros-categoria {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-filtro {
+    width: 100%;
+  }
+
+  .residuos-grid {
+    grid-template-columns: 1fr;
+  }
+}
