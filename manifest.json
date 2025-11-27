@@ -1,0 +1,8 @@
+{
+  "short_name": "GuiaResiduos",
+  "name": "Guia de Desecho de Residuos",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/APP-GUIA-RESIDUOS/static/css/main.7ff33324.css",
+    "main.js": "/APP-GUIA-RESIDUOS/static/js/main.37a36575.js",
+    "static/js/453.565d62f3.chunk.js": "/APP-GUIA-RESIDUOS/static/js/453.565d62f3.chunk.js",
+    "index.html": "/APP-GUIA-RESIDUOS/index.html",
+    "main.7ff33324.css.map": "/APP-GUIA-RESIDUOS/static/css/main.7ff33324.css.map",
+    "main.37a36575.js.map": "/APP-GUIA-RESIDUOS/static/js/main.37a36575.js.map",
+    "453.565d62f3.chunk.js.map": "/APP-GUIA-RESIDUOS/static/js/453.565d62f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ff33324.css",
+    "static/js/main.37a36575.js"
+  ]
+}
